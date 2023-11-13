@@ -68,6 +68,7 @@ body {
 
 a {
    cursor: pointer;
+   text-decoration: none;
 }
 
 .container {
@@ -356,4 +357,86 @@ nav .right a {
 
 .card-buttons a:hover {
    transform: translate(3px, 3px);
+}
+
+
+
+
+
+
+/**********************************************************************/
+/*                               Blog Page                            */
+/**********************************************************************/
+
+.blog-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 100px;
+   margin-bottom: 100px;
+}
+
+.blog-container hr {
+   width: 100px;
+   margin-top: 15px;
+   margin-bottom: 100px;
+}
+
+.blog-card {
+   width: 100%;
+   height: auto;
+   display: flex;
+   margin-bottom: 75px;
+}
+
+.blog-card img {
+   width: 500px;
+   height: auto;
+}
+
+.blog-card .text {
+   display: flex;
+   flex-direction: column;
+   font-family: 'Ubuntu', sans-serif;
+   color: var(--font-color);
+   padding: 25px 50px;
+   justify-content: center;
+   margin-top: -10px;
+   margin-right: 75px;
+}
+
+.blog-card .text h3 {
+   font-size: 26px;
+   font-weight: 500;
+   margin-bottom: 25px;
+   letter-spacing: 2px;
+   text-decoration: none;
+   color: var(--font-color);
+}
+
+.blog-card .text p {
+   font-size: 18px;
+   font-weight: 300;
+   letter-spacing: 1px;
+   line-height: 25px;
+}
+
+/**********************************************************************/
+/*                         Individual Blog Pages                      */
+/**********************************************************************/
+
+.blog-container img {
+   width: 500px;
+   height: auto;
+   margin: 75px 50px;
+}
+
+.blog-content {
+   width: 80%;
+   line-height: 30px;
+   font-family: 'Roboto', sans-serif;
+   color: var(--font-color);
+   font-size: 20px;
+   letter-spacing: 1px;
+   font-weight: 300;
 }
