@@ -10,6 +10,7 @@
    <meta http-equiv='cache-control' content='no-cache'> 
    <meta http-equiv='expires' content='0'> 
    <meta http-equiv='pragma' content='no-cache'>
+   <script src="script.js" defer></script>
    <title>Blog</title>
 </head>
 <body>
@@ -31,15 +32,33 @@
          <div class="heading">Blog</div>
          <hr />
 
-         <div class="blog-card">
-            <a href="./blog-pages/one.html">
-               <img src="images/webflow.jpg" alt="placeholder image">
-            </a>
-            <div class="text">
-               <a href="./blog-pages/one.html">
-                  <h3>Should You Learn Webflow or Coding?</h3>
+         <p>Search blog listings</p>
+         <input id="input" type="text" placeholder="Webflow">
+         <button id="btnSearch">Search</button>
+
+         <div id="blog-listings">
+            <div class="blog-card" data-name="data structures and algorithms crash course">
+               <a href="./blog-pages/two.html">
+                  <img src="images/datastructs.jpg" alt="placeholder image">
                </a>
-               <p>This is a question I asked myself not too long ago. I was into the idea of making websites for people, but I didn’t know if Webflow was enough. Here I’ll hope to help you answer the same question....</p>
+               <div class="text">
+                  <a href="./blog-pages/two.html">
+                     <h3>Data Structures and Algorithms Crash Course</h3>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit labore laborum quasi expedita vitae cum, blanditiis nobis, architecto sint eos vero alias harum animi a soluta officiis possimus fugit cupiditate?</p>
+               </div>
+            </div>
+   
+            <div class="blog-card" data-name="should you learn webflow or coding">
+               <a href="./blog-pages/one.html">
+                  <img src="images/webflow.jpg" alt="placeholder image">
+               </a>
+               <div class="text">
+                  <a href="./blog-pages/one.html">
+                     <h3>Should You Learn Webflow or Coding?</h3>
+                  </a>
+                  <p>This is a question I asked myself not too long ago. I was into the idea of making websites for people, but I didn’t know if Webflow was enough. Here I’ll hope to help you answer the same question....</p>
+               </div>
             </div>
          </div>
 
