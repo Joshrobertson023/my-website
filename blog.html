@@ -32,12 +32,15 @@
          <div class="heading">Blog</div>
          <hr />
 
-         <p>Search blog listings</p>
+         <p>Search for a blog (enter a keyword)</p>
          <input id="input" type="text" placeholder="Webflow">
-         <button id="btnSearch">Search</button>
+         <div id="blog-btns">
+            <button id="btnSearch">Search</button>
+            <button id="btnClear">Clear</button>
+         </div>
 
          <div id="blog-listings">
-            <div class="blog-card" data-name="data structures and algorithms crash course">
+            <div class="blog-card" data-name="data structures and algorithms crash course keyword">
                <a href="./blog-pages/two.html">
                   <img src="images/datastructs.jpg" alt="placeholder image">
                </a>
@@ -49,7 +52,7 @@
                </div>
             </div>
    
-            <div class="blog-card" data-name="should you learn webflow or coding">
+            <div class="blog-card" data-name="should you learn webflow or coding keyword">
                <a href="./blog-pages/one.html">
                   <img src="images/webflow.jpg" alt="placeholder image">
                </a>

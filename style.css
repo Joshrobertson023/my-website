@@ -535,6 +535,41 @@ ul, ol {
    margin: 5px 0px;
 }
 
-.hide {
+.hiden {
    display:none;
+}
+
+.blog-container p {
+   line-height: 30px;
+   font-family: 'Roboto', sans-serif;
+   color: var(--font-color);
+   font-size: 20px;
+   letter-spacing: 1px;
+   font-weight: 300;
+   margin: 5px 0px;
+}
+
+#input {
+   width: 100px;
+   height: 25px;
+   margin-bottom: 15px;
+   border-radius: 3px;
+   font-size: 20px;
+}
+
+#blog-btns {
+   display: flex;
+   gap: 20px;
+}
+
+#btnSearch, #btnClear {
+   width: 100px;
+   height: 25px;
+   font-size: 16px;
+   padding: 0px 10px;
+   padding-bottom: 7px;
+}
+
+#btnSearch:hover, #btnClear:hover {
+   transform: translate(2px, 2px);
 }

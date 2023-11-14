@@ -7,16 +7,18 @@
 
 const searchInput = document.getElementById('input'),
       btnSearch = document.getElementById('btnSearch'),
-      blogListingsContainer = document.getElementById('blog-listings');
+      btnClear = document.getElementById('btnClear'),
+      blogListingsContainer = document.getElementById('blog-listings'),
+      blogCards = document.querySelectorAll('.blog-card');
 
 const blog = (function() {
    const blogListings = [
       {
-         title: 'should you learn webflow or coding',
+         title: 'should you learn webflow or coding keyword',
          keywords: ['web', 'development'],
       },
       {
-         title: 'Data Structures and Algorithms Crash Course',
+         title: 'Data Structures and Algorithms Crash Course keyword',
          keywords: ['pointers'],
       }
    ];
@@ -24,23 +26,37 @@ const blog = (function() {
    function getLastIndex() {
       return blogListings.length - 1;
    }
+
+   function updateDisplayResults(div) {
+      blogCards.forEach(card => {
+         card.classList.add('hiden');
+      });
+
+      div.classList.remove('hiden');
+   }
+
+   btnClear.addEventListener('click', () => {
+      blogCards.forEach(card => {
+         card.classList.remove('hiden');
+      })
+   });
    
    btnSearch.addEventListener('click', () => {
+
       const searchInput = document.getElementById('input').value.toLowerCase();
+
+      if(searchInput === '') return;
       
       let searchResult = searchBlogListings(blogListings, getLastIndex(), searchInput);
-      
-      console.log(searchResult);
 
-      const targetDivs = document.querySelectorAll(`[data-name='${searchResult.targetTitle}']`);
-      console.log(targetDivs);
+      const targetDiv = document.querySelector(`[data-name='${searchResult.targetTitle}']`);
+
+      updateDisplayResults(targetDiv);
    
       function searchBlogListings(blogListings, lastIndex, targetWord) {
          let looker = 0,
              targetLocation = 0,
              found = false;
-
-         console.log(lastIndex, targetWord);
    
          while(looker < lastIndex && !blogListings[looker].title.includes(targetWord))
             looker++;
