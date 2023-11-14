@@ -1,10 +1,3 @@
-/**
- * Set all card divs to call hide
- * If div title contains search, remove the hide class.
- */
-
-
-
 const searchInput = document.getElementById('input'),
       btnSearch = document.getElementById('btnSearch'),
       btnClear = document.getElementById('btnClear'),
@@ -14,12 +7,10 @@ const searchInput = document.getElementById('input'),
 const blog = (function() {
    const blogListings = [
       {
-         title: 'should you learn webflow or coding keyword',
-         keywords: ['web', 'development'],
+         title: 'should you learn webflow or coding web development',
       },
       {
-         title: 'Data Structures and Algorithms Crash Course keyword',
-         keywords: ['pointers'],
+         title: 'data structures and algorithms crash course searching sorting pointers structures structs pointer arithmetic c',
       }
    ];
    
@@ -42,15 +33,10 @@ const blog = (function() {
    });
    
    btnSearch.addEventListener('click', () => {
-
       const searchInput = document.getElementById('input').value.toLowerCase();
-
       if(searchInput === '') return;
-      
       let searchResult = searchBlogListings(blogListings, getLastIndex(), searchInput);
-
       const targetDiv = document.querySelector(`[data-name='${searchResult.targetTitle}']`);
-
       updateDisplayResults(targetDiv);
    
       function searchBlogListings(blogListings, lastIndex, targetWord) {
