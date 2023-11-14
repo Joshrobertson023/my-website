@@ -68,7 +68,6 @@ body {
 
 a {
    cursor: pointer;
-   text-decoration: none;
 }
 
 .container {
@@ -398,6 +397,7 @@ nav .right a {
 
 .blog-card a {
    padding: 0px;
+   text-decoration: none;
 }
 
 .blog-card .text {
@@ -419,6 +419,7 @@ nav .right a {
    letter-spacing: 2px;
    text-decoration: none;
    color: var(--font-color);
+   line-height: 35px;
 }
 
 .blog-card .text p {
@@ -433,18 +434,49 @@ nav .right a {
 /*                         Individual Blog Pages                      */
 /**********************************************************************/
 
+.individual {
+   margin-top: 100px;
+}
+
 .blog-container img {
-   width: 500px;
+   width: 800px;
    height: auto;
-   margin: 75px 50px;
+   margin: 50px 50px;
 }
 
 .blog-content {
    width: 80%;
+}
+
+.blog-date {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 20px;
+   color: var(--font-color);
+   margin: 50px 0px;
+}
+
+.blog-content p {
    line-height: 30px;
    font-family: 'Roboto', sans-serif;
    color: var(--font-color);
    font-size: 20px;
    letter-spacing: 1px;
    font-weight: 300;
+   margin: 5px 0px;
+}
+
+.blog-content a {
+   color: var(--font-color);
+}
+
+.blog-content .block-quote {
+   margin: 0px 75px;
+   font-weight: 400;
+   text-align: center;
+}
+
+.blog-content .sub-header {
+   font-size: 20px;
+   font-weight: 400;
+   font-size: 22px;
 }
