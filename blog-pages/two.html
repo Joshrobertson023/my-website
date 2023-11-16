@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Roboto:wght@300;400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Roboto:wght@300;400;600&family=Source+Code+Pro&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="../style.css">
    <meta http-equiv='cache-control' content='no-cache'> 
    <meta http-equiv='expires' content='0'> 
@@ -33,7 +33,7 @@
          <img src="../images/datastructs.jpg" alt="placeholder image">
          <hr />
          <div class="blog-content">
-            <p>As a college student studying cybersecurity, I have the great pleasure of taking multiple programming classes, and this semester I happen to be taking Data Structures and Algorithms. I currently finished the second-to-last program, and we went over what the last program would be today, so I feel like I have liberty to discuss this class.<br><br>This class used C, just wanted to get the out of the way.<br><br> This class taught me different data structures in C like structs and linked lists, along with some sorting and searching algorithms. Although the programming language we used in this class was C I feel I can easily implement the things I learned in other programming languages.<br><br> I will try to briefly teach some of the things I learned in this class. Maybe someone will see this and benefit from it, but mainly it helps me retain what I learned. They say teaching is the best way to learn. Here is what I will cover:
+            <p>As a college student studying cybersecurity, I have the great pleasure of taking multiple programming classes, and this semester I happen to be taking Data Structures and Algorithms. I currently finished the second-to-last program, and we went over what the last program would be today, so I feel like I have liberty to discuss this class..<br><br> This class taught me different data structures in C like structs and linked lists, along with some sorting and searching algorithms. Although the programming language we used in this class was C I feel I can easily implement the things I learned in other programming languages. For example, I made a searching feature for my blog which you probably already noticed.<br><br> I will try to briefly teach some of the things I learned in this class. To understand this article you probably should have at least beginner knowledge of programming and be able to understand the logic.<br><br>Maybe someone will see this article and benefit from it, but mainly it helps me retain what I learned. They say teaching is the best way to learn. Here is what I will cover:
                <br><br><ul>
                   <li>Pointers and pointer arithmetic</li>
                   <li>Structs</li>
@@ -47,9 +47,66 @@
             </p>
             <p class="sub-header">Pointers</p><br>
             <p>
-               Pointers are only in select few programming languages, such as C and C++. Pointers are used to manipulate the data of a program at the low levels, enabling the ability to get the best performance and nick-picky you need. But mainly they are used to refer to the same space in memory from multiple locations.<br><br>
+               Pointers are only in select few programming languages, such as C and C++. Pointers are used to manipulate the data of a program at the low levels, enabling the ability to get the best performance and nick-picky you need. But most people will use them to refer to the same space in memory from multiple locations.<br><br>
                
-               To 
+               Pointers are defined with the * character:</p><br>
+               <div class="code">
+                  *pointer;
+               </div><br>
+               <p>If I wanted a pointer to a variable a:</p><br>
+               <div class="code">
+                  int var_a = 5;<br>
+                  int *p_var_a = &var_a;
+               </div><br>
+               <p>In this case, the memory address of var_a would be stored in p_var_a. Note the use of the address operator (&), to specify to the compiler that we are storing the address location in the pointer.</p><br><br>
+               <p class="block-quote" >Side note: it is good practice to name any pointers starting with "p_", that way you don't accidentally write over another value.</p><br><br>
+               <p>You can grab the value of the variable the pointer is pointer to by dereferencing the variable. The dereference operator is the * character. The * character is used to declare pointers, but once a pointer is already declared, the * is then used to dereferece that pointer.</p><br>
+               <p>Take a look at this program that prints the value of a variable using a pointer:</p><br>
+               <div class="code">
+                  int total_students = 32;<br>
+                  int *p_total_students = &total_students;<br>
+                  printf("%d", *p_total_students);<br><br>
+                  /* --> 32 */
+               </div><br>
+               <p>If we omitted the * in the printf statement, we would be printing the memory address of the variable being pointed to, which essentially looks like junk.</p><br>
+               <div class="code">
+                  int total_students = 32;<br>
+                  int *p_total_students = &total_students;<br>
+                  printf("%d", p_total_students);<br><br>
+                  /* --> 5673829768342 */
+               </div><br><br>
+               <p class="sub-header">Pointer Arithmetic</p><br>
+               <p>Pointer arithmetic is used to move the pointers. If you have an array, pointer arithmetic is how you go up and down the array. Pointer arithmetic can be used on virtually all data structures in C.</p><br>
+               <p>To increment a pointer by one, you would use the post-increment operator:</p><br>
+               <div class="code">
+                  *p_a = &a;<br>
+                  p_a++
+               </div><br>
+               <p>Pointers are great to use with arrays. They are more efficient than using indexes (more on indexes later). Say we want an array of student id numbers, and we need to use pointers instead of indexes. First we would declare an array of student ids, then we would declare a pointer:</p><br>
+               <div class="code">
+                  int student_ids[4] = {65, 22, 06, 49};<br>
+                  int *p_student_id = &student_ids;
+               </div><br>
+               <p>That pointer is now pointing to the first element of the array, which is 65. Let's change the value of the first and second elements:</p><br>
+               <div class="code">
+                  *p_student_id = 99;<br>
+                  *(p_student_id + 1) = 55;
+               </div><br>
+               <p>We dereferenced the pointer, to access the value of the element. In the second line, we incremented the pointer before dereferencing it. When we incremented the pointer, it pointed to the next element in the array. The array with the changes made would now be 99, 55, 06, 49.</p><br>
+               <p>We can use a for loop, incrementing the pointer to print the entire array:</p><br>
+               <div class="code">
+                  /* First we need to get the size of the array */<br>
+                  int size = sizeof(student_ids) / sizeof(p_student_id);<br><br>
+
+                  /* We also need to declare a moving pointer to go up the array */<br>
+                  int *p_moving_student_id;<br><br>
+
+                  /* Now we can loop */<br>
+                  for(p_moving_student_id = p_student_id; p_moving_student_id < size; p_moving_student_id++)<br>
+                  &nbsp;&nbsp;&nbsp;printf("%d ", *p_moving_student_id);<br><br>
+                  /* --> 99 55 06 49 */
+               </div><br>
+               <p>Notice in the for loop how we increment the moving pointer after every iteration. That is pointer arithmetic in action.</p><br>
             </p><br>
          </div>
       </div>
