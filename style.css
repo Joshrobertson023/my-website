@@ -86,8 +86,12 @@ a {
 /*                            Button classes                          */
 /**********************************************************************/
 .button {
-   width: 150px;
-   height: 45px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   width: 144px;
+   height: 39px;
    background-color: var(--primary-green);
    border: 3px solid var(--primary-green);
    border-radius: 5px;
@@ -355,7 +359,10 @@ nav .right a {
    transform: translate(3px, 3px);
 }
 
-
+/* .project-card img {
+   width: 600px;
+   height: auto;
+} */
 
 
 

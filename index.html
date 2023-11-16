@@ -7,6 +7,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
    <title>Josh Robertson</title>
 </head>
 <body>
@@ -31,11 +32,11 @@
             <p><span>Front-end</span> Web Developer</p>
             <div id="hero-btns">
                <div id="left-hero-btns">
-                  <button class="btnPrimary hero" >View Projects</button>
+                  <a id="btnProjects" class="button btnPrimary hero" >View Projects</a>
                   <div class="btnBackground" ></div>
                </div>
                <div id="right-hero-btns">
-                  <a class="button btnSecondary hero" href="https://docs.google.com/document/d/1liFFI8PsLAUsLQIAsi1aToc2eNDeBZw28fg7diHvYW8/edit?usp=sharing" target="_blank">Resume</a>
+                  <a class="button btnSecondary hero" href="https://drive.google.com/file/d/1hUXkdqPBt3DCKpJ_WLaaJmAZxnBcrwiA/view?usp=sharing" target="_blank">Resume</a>
                   <div class="btnBackground" ></div>
                </div>
             </div>
@@ -66,12 +67,12 @@
    <div class="technologies-container">
       <h3>TECHNOLOGIES</h3>
    </div>
-   <div class="container projects">
+   <div id="projectsScroll" class="container projects">
       <div class="heading" >Recent Projects</div>
       <hr />
       <div class="project-card">
          <div class="image">
-            <img src="images/Image.jpg" alt="Image placeholder">
+            <img src="images/Calculator.jpg" alt="Image placeholder" width="600px" height="350px">
          </div>
          <div class="text">
             <div class="card-heading">Calculator</div>
@@ -81,8 +82,8 @@
             <hr align="left"/>
             <p>Built using HTML, CSS, and JavaScript</p>
             <div class="card-buttons">
-               <a href="">Live Site <span>-></span></a>
-               <a href="">Github Repo <span>-></span></a>
+               <a href="https://joshrobertson023.github.io/calculator/" target="_blank">Live Site <span>-></span></a>
+               <a href="https://github.com/Joshrobertson023/calculator" target="_blank">Github Repo <span>-></span></a>
             </div>
          </div>
       </div>
