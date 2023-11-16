@@ -281,33 +281,35 @@ nav .right a {
 /*                                Projects                            */
 /**********************************************************************/
 
-.projects {
+#projectsScroll {
    display: flex;
    align-items: center;
    justify-content: center;
-   margin-top: 75px;
+   padding-top: 100px;
 }
 
-.projects hr {
+#projectsScroll > hr {
    margin-top: 15px;
+   margin-bottom: 100px;
    width: 200px;
 }
 
-.projects .text hr {
+.projects hr {
    margin-top: 10px;
-   margin-bottom: 15px;
+   margin-bottom: 10px;
    width: 150px;
 }
 
 .project-card {
    display: flex;
-   margin: 150px 0px;
+   margin: 75px 0px;
 }
 
-.projects .text {
+.projects .original
+{
    background-color: var(--secondary-background);
    position: relative;
-   margin: -25px -25px;
+   margin: -15px -25px;
    right: 45px;
    box-shadow: 1px 6px 22px 0px rgba(0,0,0,0.23);
    padding: 0px 50px;
@@ -321,6 +323,26 @@ nav .right a {
    line-height: 30px;
    font-weight: 300;
    color: var(--font-color);
+   padding-bottom: 35px;
+}
+
+.projects .inverse {
+   background-color: var(--secondary-background);
+   position: relative;
+   margin: -15px -25px;
+   box-shadow: 1px 6px 22px 0px rgba(0,0,0,0.23);
+   padding: 0px 50px;
+   padding-bottom: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 18px;
+   letter-spacing: 3px;
+   line-height: 30px;
+   font-weight: 300;
+   color: var(--font-color);
+   padding-bottom: 35px;
 }
 
 .card-heading {
