@@ -290,8 +290,18 @@ nav .right a {
 
 #projectsScroll > hr {
    margin-top: 15px;
-   margin-bottom: 100px;
+   margin-bottom: 50px;
    width: 200px;
+}
+
+#projectsScroll > p {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--font-color);
+   text-decoration: none;
+   padding: 5px 5px;
+   margin-top: 0px;
 }
 
 .projects hr {
@@ -389,8 +399,63 @@ nav .right a {
    height: auto;
 } */
 
+.project-sections {
+   margin-top: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   width: auto;
+   gap: 65px;
+   height: 30px;
+   margin-bottom: 50px;
+}
 
+.project-sections a {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--font-color);
+   text-decoration: none;
+   padding: 5px 5px;
+}
 
+.search {
+   width: 90px;
+   height: 25px;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+.front {
+   position: relative;
+   top: 26px;
+   right: 5px;
+}
+
+.front:hover {
+   transform: translate(5px, 5px);
+}
+
+.projects-search {
+   margin-bottom: 50px;
+   width: 150px;
+   height: 20px;
+   font-size: 16px;
+   text-align: center;
+}
+
+.projects-btns-right {
+   height: 25px;
+   margin-top: -25px;
+   margin-bottom: 100px;
+}
+
+.projects-btns-left {
+   height: 25px;
+   margin-top: -25px;
+   margin-bottom: 100px;
+   margin-right: 20px;
+}
 
 /**********************************************************************/
 /*                               Blog Page                            */
@@ -579,14 +644,6 @@ ul, ol {
    letter-spacing: 1px;
    font-weight: 300;
    margin: 5px 0px;
-}
-
-#input {
-   width: 100px;
-   height: 25px;
-   margin-bottom: 15px;
-   border-radius: 3px;
-   font-size: 20px;
 }
 
 #blog-btns {
