@@ -327,6 +327,9 @@ nav .right a {
 }
 
 .projects .inverse {
+   /* */
+   text-align: right;
+   /* */
    background-color: var(--secondary-background);
    position: relative;
    margin: -15px -25px;
